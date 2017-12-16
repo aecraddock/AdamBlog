@@ -1,0 +1,23 @@
+---
+title: GG Histogram Plot
+author: Adam Craddock
+date: '2017-12-16'
+slug: gg-histogram-plot
+categories:
+  - R
+tags:
+  - Byzantines
+---
+Download and bring in the packages; Lahman, sqldf, and ggplot2
+
+Pull the data from the Lahman database.
+
+This is the day I learned how to make a histogram plot. I lost my info for this so I am guess at the r code procedure.
+```[r]
+ggplot()+
+  geom_histogram(data=result,aes(x=name,y=HR),stat='identity',color='blue',fill='white')+
+  coord_flip()+
+  ylab("homeruns")+
+  xlab("team")+
+  ggtitle("1980 Team Homeruns Distribution")
+  ```[r]

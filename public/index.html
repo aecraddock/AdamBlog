@@ -49,6 +49,10 @@
                 
                   <li><a href="#2017-12-16-byzantine-history">Byzantine History</a></li>
                 
+                  <li><a href="#2017-12-16-gg-histogram-plot">GG Histogram Plot</a></li>
+                
+                  <li><a href="#2017-12-16-gg-time-series-scatterplot">GG Time Series/Scatterplot</a></li>
+                
                   <li><a href="#2015-07-23-r-rmarkdown">Byzantine History</a></li>
                 
               </ul>
@@ -502,6 +506,25 @@ $(document).ready(function($) {
   <h1>Byzantine History</h1>
   <p>```[r] The history of the Byzantine Empire runs from 331, when the city of Constantinople was founded by the Emperor Constantine through 1453, when the city was taken by the Seljuk Turks led by Mehmet II. The Byzantine Empire is a relatively obscure subject matter in today’s history classes. Most people just know that it fell in 1453 and that it lasted a thousand years following the fall of the Roman Empire. That’s amazing! The purpose of this blog is to inform the viwership about prominant events in that thousand year history.</p>
 <p>A quote from Edward Gibbon on the fall of the empire: In the fall and the sack of great cities, an historian is condemned to repeat the tale of uniform calamity: the same effects must be produced by the same passions; and when those passions may be indulged without control, small, alas! is the difference between civilized and savage man. ```[r]</p>
+
+</article>
+
+            
+              <article id="2017-12-16-gg-histogram-plot">
+  <h1>GG Histogram Plot</h1>
+  <p>Download and bring in the packages; Lahman, sqldf, and ggplot2</p>
+<p>Pull the data from the Lahman database.</p>
+<p>This is the day I learned how to make a histogram plot. I lost my info for this so I am guess at the r code procedure. <code>[r] ggplot()+   geom_histogram(data=result,aes(x=name,y=HR),stat='identity',color='blue',fill='white')+   coord_flip()+   ylab(&quot;homeruns&quot;)+   xlab(&quot;team&quot;)+   ggtitle(&quot;1980 Team Homeruns Distribution&quot;)</code>[r]</p>
+
+</article>
+
+            
+              <article id="2017-12-16-gg-time-series-scatterplot">
+  <h1>GG Time Series/Scatterplot</h1>
+  <p>This is the day in which I learned how to construct a scatter plot and time series plot.</p>
+<p>Download the needed packages; Lahman, sqldf, and ggplot2</p>
+<p>Pull the needed data from the Lahman database</p>
+<p>Plug in the ggplot2 R code functions with the data needed to bring out the chart.</p>
 
 </article>
 

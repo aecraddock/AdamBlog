@@ -1,0 +1,19 @@
+---
+title: GG Time Series/Scatterplot
+author: Adam Craddock
+date: '2017-12-16'
+slug: gg-time-series-scatterplot
+categories:
+  - R
+tags:
+  - plot
+  - chart
+  - Byzantines
+---
+This is the day in which I learned how to construct a scatter plot and time series plot. 
+
+Download the needed packages; Lahman, sqldf, and ggplot2
+
+Pull the needed data from the Lahman database
+
+Plug in the ggplot2 R code functions with the data needed to bring out the chart.
