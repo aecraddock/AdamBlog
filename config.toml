@@ -11,7 +11,6 @@ disableKinds=["RSS"]
   logo = "fa-diamond"
 
 
-
 [[params.social]]
   medium = "github"
   icon = "github"
@@ -23,6 +22,5 @@ languageName = "English"
 weight = 1
 
 
-title = "Dimension"
-description = '<!--[-->A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
-                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]-->'
+title = "Byzantine Blog"
+description = 'A history blog on the Byzantine Empire, the successor state to the Roman Empire run by Adam Craddock'

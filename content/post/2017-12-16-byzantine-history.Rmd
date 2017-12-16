@@ -1,16 +1,21 @@
 ---
-title: "Byzantine History"
-author: "Adam Craddock"
-date: 2015-07-23T21:13:14-05:00
-categories: ["R"]
-tags: ["Romans", "Byzantines", "Empire"]
+title: Byzantine History
+author: Adam Craddock
+date: '2017-12-16'
+slug: byzantine-history
+categories:
+  - R
+  - Byzantines
+  - Romans
+tags:
+  - Byzantines
+  - Empire
+  - Romans
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
-```
-
+```[r]
 The history of the Byzantine Empire runs from 331, when the city of Constantinople was founded by the Emperor Constantine through 1453, when the city was taken by the Seljuk Turks led by Mehmet II. The Byzantine Empire is a relatively obscure subject matter in today's history classes. Most people just know that it fell in 1453 and that it lasted a thousand years following the fall of the Roman Empire. That's amazing! The purpose of this blog is to inform the viwership about prominant events in that thousand year history.
 
 A quote from Edward Gibbon on the fall of the empire:
 In the fall and the sack of great cities, an historian is condemned to repeat the tale of uniform calamity: the same effects must be produced by the same passions; and when those passions may be indulged without control, small, alas! is the difference between civilized and savage man. 
+```[r]

@@ -3,7 +3,7 @@
 <html>
 	<head>
 	<meta name="generator" content="Hugo 0.31.1" />
-		<title>Dimension</title>
+		<title>Byzantine Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
@@ -28,9 +28,8 @@
             </div>
             <div class="content">
               <div class="inner">
-                <h1>Dimension</h1>
-                <p><!--[-->A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<!--]--><br />
-                <!--[-->for free under the <a href="https://html5up.net/license">Creative Commons</a> license.<!--]--></p>
+                <h1>Byzantine Blog</h1>
+                <p>A history blog on the Byzantine Empire, the successor state to the Roman Empire run by Adam Craddock</p>
               </div>
             </div>
             <nav>
@@ -38,7 +37,7 @@
                 
                   <li><a href="#intro">Intro</a></li>
                 
-                  <li><a href="#work">Work</a></li>
+                  <li><a href="#work">gg Bar plot graphing</a></li>
                 
                   <li><a href="#about">About</a></li>
                 
@@ -48,7 +47,9 @@
                 
                   <li><a href="#formspree">contact 2</a></li>
                 
-                  <li><a href="#2015-07-23-r-rmarkdown">Hello R Markdown</a></li>
+                  <li><a href="#2017-12-16-byzantine-history">Byzantine History</a></li>
+                
+                  <li><a href="#2015-07-23-r-rmarkdown">Byzantine History</a></li>
                 
               </ul>
             </nav>
@@ -75,18 +76,38 @@ Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisi
 
             
               <article id="work">
-  <h1>Work</h1>
-  <p>
-<figure class="image main">
-    
-        <img src="/images/pic02.jpg" />
-    
-    
-</figure>
+  <h1>gg Bar plot graphing</h1>
+  <p>Download and catalogue the required packages</p>
 
-Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
+<p><code>[r]
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+</code>[r]</p>
 
-<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+<p>Extract the information needed from Lahman, homeruns from teams in the year 1980 ordered by homeruns.</p>
+
+<p>```[r]
+query&lt;-&ldquo;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&rdquo;</p>
+
+<p>result&lt;-sqldf(query)</p>
+
+<p>result$name&lt;-factor(result$name,levels=result$name)
+```[r]</p>
+
+<p>Now we visualized the data in the bar plot</p>
+
+<p><code>[r]
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat='identity',color='blue',fill='white')+
+  coord_flip()+
+  ylab(&quot;homeruns&quot;)+
+  xlab(&quot;team&quot;)+
+  ggtitle(&quot;1980 Team Homeruns Distribution&quot;)
+</code>[r]</p>
 
 </article>
 
@@ -129,13 +150,7 @@ Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend di
 
 <ul class="icons">
 
-	<li><a href="#" class="icon fa-twitter"><span class="label">twitter</span></a></li>
-
-	<li><a href="#" class="icon fa-facebook"><span class="label">facebook</span></a></li>
-
-	<li><a href="#" class="icon fa-instagram"><span class="label">instagram</span></a></li>
-
-	<li><a href="#" class="icon fa-github"><span class="label">github</span></a></li>
+	<li><a href="https://github.com/aecraddock/Adamblog" class="icon fa-github"><span class="label">github</span></a></li>
 
 </ul>
 
@@ -150,13 +165,7 @@ Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend di
 
 <p><code>{&zwnj;{&lt; socialLinks &gt;}}</code> will get into <ul class="icons">
 
-	<li><a href="#" class="icon fa-twitter"><span class="label">twitter</span></a></li>
-
-	<li><a href="#" class="icon fa-facebook"><span class="label">facebook</span></a></li>
-
-	<li><a href="#" class="icon fa-instagram"><span class="label">instagram</span></a></li>
-
-	<li><a href="#" class="icon fa-github"><span class="label">github</span></a></li>
+	<li><a href="https://github.com/aecraddock/Adamblog" class="icon fa-github"><span class="label">github</span></a></li>
 
 </ul> configured in <code>config.toml</code>.</p>
 
@@ -482,60 +491,25 @@ $(document).ready(function($) {
 
 <ul class="icons">
 
-	<li><a href="#" class="icon fa-twitter"><span class="label">twitter</span></a></li>
-
-	<li><a href="#" class="icon fa-facebook"><span class="label">facebook</span></a></li>
-
-	<li><a href="#" class="icon fa-instagram"><span class="label">instagram</span></a></li>
-
-	<li><a href="#" class="icon fa-github"><span class="label">github</span></a></li>
+	<li><a href="https://github.com/aecraddock/Adamblog" class="icon fa-github"><span class="label">github</span></a></li>
 
 </ul>
 
 </article>
 
             
+              <article id="2017-12-16-byzantine-history">
+  <h1>Byzantine History</h1>
+  <p>```[r] The history of the Byzantine Empire runs from 331, when the city of Constantinople was founded by the Emperor Constantine through 1453, when the city was taken by the Seljuk Turks led by Mehmet II. The Byzantine Empire is a relatively obscure subject matter in today’s history classes. Most people just know that it fell in 1453 and that it lasted a thousand years following the fall of the Roman Empire. That’s amazing! The purpose of this blog is to inform the viwership about prominant events in that thousand year history.</p>
+<p>A quote from Edward Gibbon on the fall of the empire: In the fall and the sack of great cities, an historian is condemned to repeat the tale of uniform calamity: the same effects must be produced by the same passions; and when those passions may be indulged without control, small, alas! is the difference between civilized and savage man. ```[r]</p>
+
+</article>
+
+            
               <article id="2015-07-23-r-rmarkdown">
-  <h1>Hello R Markdown</h1>
-  <div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
-</div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span id="fig:pie"></span>
-<img src="/post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
-</div>
-</div>
+  <h1>Byzantine History</h1>
+  <p>The history of the Byzantine Empire runs from 331, when the city of Constantinople was founded by the Emperor Constantine through 1453, when the city was taken by the Seljuk Turks led by Mehmet II. The Byzantine Empire is a relatively obscure subject matter in today’s history classes. Most people just know that it fell in 1453 and that it lasted a thousand years following the fall of the Roman Empire. That’s amazing! The purpose of this blog is to inform the viwership about prominant events in that thousand year history.</p>
+<p>A quote from Edward Gibbon on the fall of the empire: In the fall and the sack of great cities, an historian is condemned to repeat the tale of uniform calamity: the same effects must be produced by the same passions; and when those passions may be indulged without control, small, alas! is the difference between civilized and savage man.</p>
 
 </article>
 
@@ -545,15 +519,11 @@ Figure 1: A fancy pie chart.
         
           <div id="languages">
             
-              
-                <a href="/de/">Deutsch</a>
-              
-            
           </div>
 
 				
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>. Powered by <a href="https://www.gohugo.io/">Hugo.</a></p>
+						<p class="copyright">&copy; . Design: <a href="https://html5up.net">HTML5 UP</a>. Powered by <a href="https://www.gohugo.io/">Hugo.</a></p>
 					</footer>
 
 			</div>
